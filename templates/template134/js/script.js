@@ -87,7 +87,7 @@
                 $("#loader").css("display", "inline-block");
                 $.ajax({
                     type: "POST",
-                    url: "/wish",
+                    url: "https://mongo-realm-worker.vietdanh.workers.dev/api/todos",
                     data: $(form).serialize(),
                     success: function(res) {
                         $("#loader").hide();

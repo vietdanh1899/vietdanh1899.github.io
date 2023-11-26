@@ -17,12 +17,9 @@
     <meta property="og:url" content="https://vietdanh1899.github.io">
     <meta property="og:description"
         content="Nguyễn Viết Danh &amp; Trần Lê Cẩm Phương - Our wedding date: 2023-12-16 | Điều tuyệt vời nhất mà bạn từng học là yêu và được yêu để đáp lại">
-    <meta property="og:image"
-        content="https://vietdanh1899.github.io/photos/anh_cuoi-min.jpg">
-    <meta property="og:image:url"
-        content="https://vietdanh1899.github.io/photos/anh_cuoi-min.jpg">
-    <meta property="og:image:secure_url"
-        content="https://vietdanh1899.github.io/photos/anh_cuoi-min.jpg">
+    <meta property="og:image" content="https://vietdanh1899.github.io/photos/anh_cuoi-min.jpg">
+    <meta property="og:image:url" content="https://vietdanh1899.github.io/photos/anh_cuoi-min.jpg">
+    <meta property="og:image:secure_url" content="https://vietdanh1899.github.io/photos/anh_cuoi-min.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Texturina:opsz,wght@12..72,100&display=swap"
@@ -428,8 +425,7 @@
                                         ấy vậy mà gần 3 năm rồi đấy cuối cùng tụi mình cũng về cùng nhà.
                                     </p>
                                     <div class="img-holder">
-                                        <img src="photos/chuyen_tinh/e692ddb726c78f99d6d6.jpg"
-                                            alt="" />
+                                        <img src="photos/chuyen_tinh/e692ddb726c78f99d6d6.jpg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -441,8 +437,7 @@
                                         miếng bánh uống miếng bia giữa tiếng sóng biển ầm ầm từng đợt và gió rít lên
                                         từng hồi a thủ thỉ lời yêu và từ đó 1 hành trình mới của cả hai bắt đầu. </p>
                                     <div class="img-holder">
-                                        <img src="photos/chuyen_tinh/30ac46c5bcb515eb4ca4.jpg"
-                                            alt="" />
+                                        <img src="photos/chuyen_tinh/30ac46c5bcb515eb4ca4.jpg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -457,8 +452,7 @@
                                         và khi anh ngõ lời, em đã nguyện đi đâu cũng được miễn là đi cùng nhau.
                                     </p>
                                     <div class="img-holder">
-                                        <img src="photos/chuyen_tinh/41fff4a20ed2a78cfec3.jpg"
-                                            alt="" />
+                                        <img src="photos/chuyen_tinh/41fff4a20ed2a78cfec3.jpg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -492,8 +486,8 @@
                                 <small class="px-1">BRIDE </small>
                             </div>
                         </div>
-                        <img data-aos="fade-down-right" class="mb-5 crown"
-                            src="templates/template134/img/sub_icon.png" alt="">
+                        <img data-aos="fade-down-right" class="mb-5 crown" src="templates/template134/img/sub_icon.png"
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -591,7 +585,8 @@
                                 </div>
                                 <ul class="member-contact social-links d-flex p-0 mb-4">
                                     <li>
-                                        <a href="https://www.facebook.com/profile.php?id=100007144039313" target="_blank">
+                                        <a href="https://www.facebook.com/profile.php?id=100007144039313"
+                                            target="_blank">
                                             <i class="bi bi-facebook"></i>
                                         </a>
                                     </li>
@@ -868,14 +863,6 @@
                         </div>
                     </form>
                     <div class="m-3" id="show-comments">
-                        <div class="box-comment p-3 mx-2 mb-3">
-                            <h4 id="user-name-comment">hfhgsdfsdf</h4>
-                            <p id="comment-detail" class="m-0">ok dfsfsdf</p>
-                        </div>
-                        <div class="box-comment p-3 mx-2 mb-3">
-                            <h4 id="user-name-comment">Phương</h4>
-                            <p id="comment-detail" class="m-0">Oke haaaaaaa</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -947,6 +934,24 @@
     <script src="common/bii.js?v=202311195"></script>
     <script src="templates/template134/js/libs.js?v=202311195"></script>
     <script src="templates/template134/js/script.js?v=202311195"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $.ajax({
+                type: "GET",
+                url: "https://mongo-realm-worker.vietdanh.workers.dev/api/todos",
+                success: function (res) {
+                    if (!res.error) {
+                        res.forEach(wish => {
+
+                            $('#show-comments').prepend('<div class="box-comment p-3 mx-2 mb-3"><h4 id="user-name-comment">' + wish.name + '</h4><p id="comment-detail" class="m-0">' + wish.content + '</p></div>');
+                        })
+
+                        $('#show-comments').scrollTop(0);
+                    }
+                }
+            });
+        })(window.jQuery);
+    </script>
 </body>
 
 </html>
