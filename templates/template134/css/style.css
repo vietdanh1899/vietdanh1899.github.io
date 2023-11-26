@@ -599,10 +599,15 @@ header .navbar-brand {
 .flip-card-front,
 .flip-card-back {
     position: absolute;
+    top: 0;
     width: 100%;
     height: inherit;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+}
+
+.flip-card-front {
+    position: inherit;
 }
 
 .flip-card-back>ul {
@@ -641,7 +646,7 @@ header .navbar-brand {
     }
     .flip-card-inner {
         width: 100%;
-        min-height: 700px;
+        min-height: 500px;
         margin: 0 auto;
     }
     .flip-card-front,
